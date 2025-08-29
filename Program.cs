@@ -159,15 +159,15 @@ app.MapControllers();
 
 
 // Seed initial admin user
-using (var scope = app.Services.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<LibraryDbContext>();
-    if (!dbContext.Users.Any(u => u.Role == "Admin"))
-    {
-        var authService = scope.ServiceProvider.GetRequiredService<AuthService>();
-        await authService.Register("admin", "admin@library.com", "admin123", "Admin");
-    }
-}
+//using (var scope = app.Services.CreateScope())
+//{
+//    var dbContext = scope.ServiceProvider.GetRequiredService<LibraryDbContext>();
+//    if (!dbContext.Users.Any(u => u.Role == "Admin"))
+//    {
+//        var authService = scope.ServiceProvider.GetRequiredService<AuthService>();
+//        await authService.Register("admin", "admin@library.com", "admin123", "Admin");
+//    }
+//}
 
 
 app.Run();
